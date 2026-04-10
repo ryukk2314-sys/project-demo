@@ -43,6 +43,9 @@ def submit():
 
     return "Submitted successfully"
 
-
+@app.route('/data')
+def show_data():
+    with open("data.txt", "r") as f:
+        return f.read()
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
