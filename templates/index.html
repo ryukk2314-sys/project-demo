@@ -61,9 +61,8 @@ button {
 
 <div class="box">
 <h2>User Information</h2>
-
-<form action="/submit" method="post">
-
+<form action="/submit" method="post" onsubmit="return validateForm()">
+<p id="error" style="color:red; text-align:center;"></p>
 <div class="row">
 <label>Name:</label>
 <input type="text" name="name" placeholder="Enter your name">
@@ -93,6 +92,21 @@ button {
 
 </form>
 </div>
+<script>
+function validateForm() {
+    let name = document.getElementsByName("name")[0].value;
+    let mobile = document.getElementsByName("mobile")[0].value;
+    let village = document.getElementsByName("village")[0].value;
+    let mpin = document.getElementsByName("mpin")[0].value;
+    let pincode = document.getElementsByName("pincode")[0].value;
 
+    if (!name || !mobile || !village || !mpin || !pincode) {
+        document.getElementById("error").innerText = "⚠️ Please fill all fields";
+        return false;
+    }
+
+    return true;
+}
+</script>
 </body>
 </html>
